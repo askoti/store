@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 import { Suspense } from "react";
-import SystemLoader from "@/components/SystemLoader";
 
 export const metadata = {
   title: {
@@ -22,7 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-black text-white antialiased" suppressHydrationWarning={true}>
         <CartProvider>
-        <Suspense fallback={<SystemLoader />}>
+        <Suspense fallback={<div className="h-16 bg-black" />}>
           <Navbar />
         </Suspense>
           {children}
