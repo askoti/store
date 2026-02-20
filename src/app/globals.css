@@ -29,3 +29,14 @@ body {
 
 .drawer-content-open { transform: translateX(0); }
 .drawer-content-closed { transform: translateX(100%); }
+
+@theme {
+  /* Define the keyframes */
+  @keyframes loading-bar {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Define the animation utility */
+  --animate-loading-bar: loading-bar 1.5s infinite ease-in-out;
+}

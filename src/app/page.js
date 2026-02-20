@@ -1,5 +1,7 @@
 import prisma from "@/lib/prisma";
 import Storefront from "@/components/Storefront";
+import SystemLoader from "@/components/SystemLoader";
+import { Suspense } from "react";
 
 // METADATA DEFINITION
 export async function generateMetadata() {
@@ -27,7 +29,9 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen text-white">
-      <Storefront initialProducts={products} />
+      <Suspense fallback={<SystemLoader />}>
+        <Storefront initialProducts={products} />
+      </Suspense>
     </main>
   );
 }
